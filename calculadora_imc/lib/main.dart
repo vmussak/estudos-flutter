@@ -33,10 +33,20 @@ class _HomeState extends State<Home> {
     double imc = peso / (altura * altura);
     String imcText = imc.toStringAsPrecision(3);
     setState(() {
-      if(imc < 18.6)
-        _infoText = "Abaixo do peso ($imcText)";
+      if(imc < 18.5) {
+        _infoText = "Na capa da gaita, no pó da rabiola, no resto do kisuco, na tripa da linguiça ($imcText)";
+      }
+      else if (imc < 25) {
+        _infoText = "Não fez mais que a obrigação ($imcText)";
+      }
+      else if (imc < 30) {
+        _infoText = "Tem pochete ($imcText)";
+      }
+      else if (imc < 40) {
+        _infoText = "Só joga e come ($imcText)";
+      }
       else
-        _infoText = "Não manjo ($imcText)";
+        _infoText = "Meu amigo!!! ($imcText)";
     });
   }
 
